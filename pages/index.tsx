@@ -83,7 +83,7 @@ export default function Home({ initialData }: { initialData: ResponseInfo }) {
     <DefaultLayout>
       <SearchBar
         isSearching={isSearching}
-        placeholder="Enter character's name, home world or species..."
+        placeholder="Enter character's name, home world or species"
         className="mb-4"
         onChange={handleChange}
         onClear={handleClear}

@@ -30,7 +30,7 @@ const SearchBar = ({
       aria-label={ariaLabel}
       classNames={{
         inputWrapper: "bg-default-100",
-        input: "text-sm",
+        input: "text-sm truncate",
       }}
       onChange={onChange}
       isInvalid={isInvalid}
