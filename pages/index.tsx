@@ -34,11 +34,11 @@ export default function Home({ initialData }: { initialData: ResponseInfo }) {
     isSearching ? null : fetchCharacters();
   }, [fetchCharacters]);
 
-  useEffect(() => {
-    searchQuery !== "" ? setIsSearching(true) : setIsSearching(false);
-  }, [searchQuery]);
-
   const searchCharacters = useDebounce(async () => {
+    if (searchQuery === "") {
+      setIsSearching(false);
+      return;
+    }
     const searchResults = await search(searchQuery);
 
     if (searchResults.length === 0) {
@@ -49,14 +49,16 @@ export default function Home({ initialData }: { initialData: ResponseInfo }) {
 
     setData({ characters: searchResults, count: searchResults.length });
     setIsSearching(false);
-  }, 400);
+  }, 600);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsSearching(true);
     const searchTerm = e.target.value;
 
     setSearchQuery(searchTerm);
 
     if (searchTerm === "") {
+      setIsSearching(false);
       fetchCharacters();
       return;
     }
