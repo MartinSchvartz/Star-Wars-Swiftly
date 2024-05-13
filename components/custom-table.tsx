@@ -29,7 +29,7 @@ const CustomTable = ({
     <Table
       layout="fixed"
       aria-label="Example table with client async pagination"
-      className="mb-16"
+      className="mb-8"
       bottomContent={
         pages > 0 && (data?.characters?.length ?? 0) <= rowsPerPage ? (
           <div className="flex w-full justify-center">

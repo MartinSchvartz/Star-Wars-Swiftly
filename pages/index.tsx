@@ -89,7 +89,7 @@ export default function IndexPage({
       <SearchBar
         isSearching={isSearching}
         placeholder="Enter character's name, home world or species..."
-        className="mb-12"
+        className="mb-4"
         onChange={handleChange}
         onClear={handleClear}
         isInvalid={isInvalid}
