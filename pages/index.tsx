@@ -16,7 +16,7 @@ export default function IndexPage({
   const [data, setData] = useState<ResponseInfo>();
   const [isSearching, setIsSearching] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [errorMessage, setErrorMessage] = useState<any>();
+  const [errorMessage, setErrorMessage] = useState<string>();
   const [isInvalid, setIsInvalid] = useState(false);
 
   const [page, setPage] = useState<number>(1);
