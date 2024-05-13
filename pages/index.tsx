@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useMemo, useEffect, useCallback } from "react";
 import DefaultLayout from "@/layouts/default";
 
@@ -7,11 +8,7 @@ import { getCharacters, search } from "@/services/starWarsService";
 import useDebounce from "@/hooks/useDebounce";
 import CustomTable from "@/components/custom-table";
 
-export default function IndexPage({
-  initialData,
-}: {
-  initialData: ResponseInfo;
-}) {
+export default function Home({ initialData }: { initialData: ResponseInfo }) {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [data, setData] = useState<ResponseInfo>();
   const [isSearching, setIsSearching] = useState(false);
@@ -38,14 +35,10 @@ export default function IndexPage({
   }, [fetchCharacters]);
 
   useEffect(() => {
-    if (searchQuery !== "") {
-      setIsSearching(true);
-    } else {
-      setIsSearching(false);
-    }
+    searchQuery !== "" ? setIsSearching(true) : setIsSearching(false);
   }, [searchQuery]);
 
-  const debouncedRequest = useDebounce(async () => {
+  const searchCharacters = useDebounce(async () => {
     const searchResults = await search(searchQuery);
 
     if (searchResults.length === 0) {
@@ -70,7 +63,7 @@ export default function IndexPage({
 
     setIsInvalid(false);
 
-    debouncedRequest();
+    searchCharacters();
   };
 
   const rowsPerPage = 10;
