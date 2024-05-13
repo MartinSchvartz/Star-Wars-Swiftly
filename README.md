@@ -1,10 +1,10 @@
-# Next.js & NextUI Template
+# Welcome to the Star Wars challenge: Explore the Galaxy with Ease!
 
-This is a template for creating applications using Next.js 14 (pages directory) and NextUI (v2).
+Welcome to the Star Wars challenge! This project is your gateway to exploring the vast universe of Star Wars characters. Built as a take-home interview task, this project is a user-friendly directory of characters sourced from the [Star Wars API](https://swapi.dev/). Let's dive into the details
 
->Note: Since Next.js 14, the pages router is recommend migrating to the [new App Router](https://nextjs.org/docs/app) to leverage React's latest features
->
->Read more: [Pages Router](https://nextjs.org/docs/pages)
+## Project Overview
+
+This project invites you to see a webpage that showcases a grid of character profile cards, each containing essential information like the character's name, homeworld, and species. The mission doesn't end there! The webpage integrates search functionality, enabling users to find characters by name, homeworld, or species with ease.
 
 ## Technologies Used
 
@@ -16,13 +16,11 @@ This is a template for creating applications using Next.js 14 (pages directory) 
 - [Framer Motion](https://www.framer.com/motion)
 - [next-themes](https://github.com/pacocoursey/next-themes)
 
-## How to Use
+## Try it online
 
-To create a new project based on this template using `create-next-app`, run the following command:
+[Link to the webpage where it's deployed](https://star-wars-characters-sooty.vercel.app/)
 
-```bash
-npx create-next-app -e https://github.com/nextui-org/next-pages-template
-```
+## How to run in local
 
 ### Install dependencies
 
@@ -30,6 +28,12 @@ You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
 
 ```bash
 npm install
+```
+
+### Build the project
+
+```bash
+npm run build
 ```
 
 ### Run the development server
